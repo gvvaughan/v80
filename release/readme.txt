@@ -8,15 +8,11 @@ v80 is an 8-bit native, multi-platform, multi-CPU cross-assembler.
 "v80" refers to the Z80 port, but versions that target different CPUs
 and/or run on different host CPUs are available, or are planned:
 
-    v80         <- runs on Z80  - assembles Z80 code ".v80"
-    v80x65      <-      "       - assembles 6502 code ".v65"
-    v80x69*     <-      "       - assembles 6809 code ".v69"
-    v80x83*     <-      "       - assembles GameBoy (SM83) code ".v83"
+    v80         assembles Z80 code ".v80"
+    v65         assembles 6502 code ".v65", currently running on Z80
 
-    v65*        <- runs on 6502 - assembles 6502 code ".v65"
-
-    v69*        <- runs on 6809 - assembles 6809 code (.v69)
-    v69x65*     <-      "       - assembles 6502 code (.v65)
+    v69*        assembles 6809 code ".v69"
+    v83*        assembles GameBoy (SM83) code ".v83"
 
     *(coming in a future release)
 
@@ -31,15 +27,15 @@ PCs for 8-bit systems to do useful, creative, meaningful work.
 0. Usage:
 ================================================================================
 "v80.com" is a Z80 CP/M executable that assembles Z80 source code (in v80
-syntax). "v80x65" is a cross-assembler version of v80 that runs on Z80 CP/M
+syntax). "v65" is a cross-assembler version of v80 that runs on Z80 CP/M
 but assembles 6502 source code.
 
 Since "v80.com" is a Z80 executable that could run on real 1985 hardware,
-for assembling v80/v65 syntax source code on PCs "ntvcm.exe" is provided to
-emulate CP/M. Therefore, to invoke v80/v80x65 on PC, call it via ntvcm.exe:
+for assembling v80 syntax source code on PCs "ntvcm.exe" is provided to
+emulate CP/M. Therefore, to invoke v80/v65 on PC, call it via ntvcm.exe:
 
 |   ntvcm.exe v80.com input.v80 [output.com]
-|   ntvcm.exe v80x65.com input.v65 [output.prg]
+|   ntvcm.exe v65.com input.v65 [output.prg]
 
 The output file-name is optional and defaults to the input file-name
 with ".com" (v80) or ".prg" (v65) file-extension.
@@ -67,8 +63,8 @@ the current directory to that of v80.com before invoking it.
 This could be avoided with a native C version of v80, so if this is something
 you think you could write, please see https://github.com/Kroc/v80/issues/4
 
-This release bundle include an ntvcm executable for Windows;
-for Mac, Linux & all UNIX-likes, you'll have to compile ntvcm
+This release bundle includes an NTVCM executable for Windows;
+for Mac, Linux & all UNIX-likes, you'll have to compile NTVCM
 from source: https://github.com/davidly/ntvcm
 
 
@@ -416,12 +412,12 @@ v80 does not use standard instruction syntax, i.e. Intel (8080) / Zilog (Z80),
 or MOS (6502). v80's syntax was chosen to be as easy and as fast as possible
 to parse, but you should also find them easy to type!
 
-See "z80.txt" for a complete list of Z80 mnemonics with side-by-side Zilog
+See "isa_z80.txt" for a complete list of Z80 mnemonics with side-by-side Zilog
 equivalents as well as cycle-counts and flag-states for the original Z80/Z80A.
 
 - use ".v80" file-extension for Z80 source code
 
-See "6502.txt" for a complete list of 6502 mnemonics with side-by-side MOS
+See "isa_6502.txt" for a complete list of 6502 mnemonics with side-by-side MOS
 equivalents as well as cycle-counts and flag-states for the original 6502/6510
 etc.
 

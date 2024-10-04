@@ -17,7 +17,7 @@
 ; this text will be in the code-segment and will be overwritten by assembly
 ;
 :banner .b      "; v80 | OS: CP/M [Z80] | ISA: Z80" #LF
-        .b      "; (C) Kroc Camen 2023-2024, MIT License" #LF
+        .b      "; (C) Kroc Camen 2023-24, MIT License" #LF
         .b      "; v1.0-dev <github.com/kroc/v80>" #LF
         .b      ";" 0
 
